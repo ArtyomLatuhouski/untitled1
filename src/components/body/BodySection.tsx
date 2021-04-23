@@ -1,6 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import {Switch, Route} from "react-router";
-import ItemOne from "./BodyItems/ItemOne";
+import ItemOne from "./BodyItems/DataTable";
 import ItemTwo from "./BodyItems/ItemTwo";
 import ItemThree from "./BodyItems/ItemThree";
 
