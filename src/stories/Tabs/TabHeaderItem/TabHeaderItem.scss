@@ -1,0 +1,65 @@
+@import "../base";
+
+@function px($value){
+    @return $value+px;
+}
+
+@mixin corner{
+    width: px($border-radius);
+    transform: rotate(180deg);
+}
+
+@mixin with-radius{
+    background-color: transparent;
+    height: px($border-radius*2); // #($$border-radius*2)px
+    border-top-left-radius: px($border-radius);
+    box-shadow: 0 px(-$border-radius) 0 0 $tab-bg-color-active;
+}
+
+.tab-header-item__container{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    background-color:transparent ;
+    font-family: Helvetica,Arial,sans-serif;
+    overflow:hidden;
+    cursor: pointer;
+
+    .tab-header-item__content-container{
+        height: 100%;
+        flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:$tab-bg-color ;
+        border-top-left-radius: px($border-radius);
+        border-top-right-radius: px($border-radius);
+
+        .tab-header-item__title{
+            color: #ffff;
+        }
+        &_active{
+            background-color:$tab-bg-color-active ;
+        }
+    }
+
+    .tab-header-item__left-corner{
+        @include corner();
+
+        &_active{
+            @include with-radius()
+        }
+    }
+
+    .tab-header-item__right-corner{
+        @include corner();
+
+        &_active{
+            @include with-radius()
+        }
+
+        transform: scale(1,-1);
+    }
+
+}

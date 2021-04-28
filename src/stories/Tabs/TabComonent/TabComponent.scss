@@ -1,0 +1,27 @@
+@import "../base";
+
+.tab__container {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: $tabs-container-bg-color;
+
+
+  display: flex;
+  flex-direction: column;
+
+
+  .tabs-content__container {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+
+    background-color: $tab-bg-color-active;
+
+    border-bottom-left-radius: 10px;
+  }
+
+}
